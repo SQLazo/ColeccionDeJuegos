@@ -32,7 +32,7 @@
                     <navigationItem key="navigationItem" id="nmQ-7l-FYh">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Phz-iP-zaV">
                             <connections>
-                                <segue destination="XGi-kd-x4K" kind="show" id="smc-Qr-JZP"/>
+                                <segue destination="XGi-kd-x4K" kind="show" identifier="juegoSegue" id="smc-Qr-JZP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -42,7 +42,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="855" y="139"/>
+            <point key="canvasLocation" x="823" y="139"/>
         </scene>
         <!--Juegos View Controller-->
         <scene sceneID="zU6-Jr-hPa">
@@ -74,15 +74,24 @@
                                     <action selector="agregarTapped:" destination="XGi-kd-x4K" eventType="touchUpInside" id="xdC-iZ-dge"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qm-NI-ogN">
+                                <rect key="frame" x="179.5" y="389" width="55" height="30"/>
+                                <state key="normal" title="Eliminar"/>
+                                <connections>
+                                    <action selector="eliminarTapped:" destination="XGi-kd-x4K" eventType="touchUpInside" id="CtB-dN-o02"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="fLS-bo-OcK" firstAttribute="centerX" secondItem="0ye-GF-IFj" secondAttribute="centerX" id="36O-0Q-5Bk"/>
+                            <constraint firstItem="9qm-NI-ogN" firstAttribute="top" secondItem="fLS-bo-OcK" secondAttribute="bottom" constant="15" id="DzB-4n-VtS"/>
                             <constraint firstItem="fLS-bo-OcK" firstAttribute="top" secondItem="dsm-r1-Thu" secondAttribute="bottom" constant="20" id="G1s-n9-zu4"/>
                             <constraint firstItem="dsm-r1-Thu" firstAttribute="top" secondItem="dXl-2J-Ago" secondAttribute="bottom" constant="20" id="OeD-hT-DIt"/>
                             <constraint firstItem="dXl-2J-Ago" firstAttribute="top" secondItem="Udx-D2-flu" secondAttribute="top" constant="32" id="bR7-QH-r1q"/>
                             <constraint firstItem="dXl-2J-Ago" firstAttribute="centerX" secondItem="0ye-GF-IFj" secondAttribute="centerX" id="fRT-FG-JdE"/>
                             <constraint firstItem="dsm-r1-Thu" firstAttribute="centerX" secondItem="0ye-GF-IFj" secondAttribute="centerX" id="gh5-2Y-fz7"/>
+                            <constraint firstItem="9qm-NI-ogN" firstAttribute="centerX" secondItem="0ye-GF-IFj" secondAttribute="centerX" id="hwq-5m-Ixp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Udx-D2-flu"/>
                     </view>
@@ -101,6 +110,8 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="agregarActualizarBoton" destination="fLS-bo-OcK" id="gbz-h1-BXn"/>
+                        <outlet property="eliminarBoton" destination="9qm-NI-ogN" id="gMu-l9-OV5"/>
                         <outlet property="juegoImageView" destination="dXl-2J-Ago" id="2zB-IU-lHM"/>
                         <outlet property="tituloTextField" destination="dsm-r1-Thu" id="Onw-Nd-jGB"/>
                     </connections>
