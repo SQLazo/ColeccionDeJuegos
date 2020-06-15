@@ -43,6 +43,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let objetoMovido = self.juegos[sourceIndexPath.row]
+        juegos.remove(at: sourceIndexPath.row)
+        juegos.insert(objetoMovido, at: destinationIndexPath.row)
+        NSLog("%@", "\(sourceIndexPath.row) => \(destinationIndexPath.row) \(juegos)")
+    }
+    
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -52,6 +59,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        self.tableView.isEditing = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
